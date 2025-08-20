@@ -1,0 +1,1 @@
+# BERT-specific model definition (encoder-only)

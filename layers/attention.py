@@ -25,7 +25,14 @@ class SelfAttention(nn.Module):
         return output
     
 # Multi-Head Attention
+class MultiHeadAttention:
+    pass
 
 
 
 # Grouped-Query-Attention
+class GroupedQueryAttention:
+    pass
+
+
+# add also MLA for Deepseek model

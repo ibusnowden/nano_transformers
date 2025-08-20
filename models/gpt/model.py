@@ -1,0 +1,1 @@
+# GPT-specific model definition (decoder-only)
