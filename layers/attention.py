@@ -25,14 +25,26 @@ class SelfAttention(nn.Module):
         return output
     
 # Multi-Head Attention
-class MultiHeadAttention:
-    pass
+class MultiHeadAttention(nn.Module):
+    def __init__(self, d_model, num_heads):
+        super().__init__()
+        self.heads = nn.ModuleList(
+            [SelfAttention(d_model) for _ in range(num_heads)]
+        )
+        self.out_proj = (num_heads, num_heads)
+    
+    def forward(self, x):
+        context_vec = torch.cat([head(x) for head in self.heads], dim=-1)
+        return self.out_proj(context_vec)
+    
 
 
 
 # Grouped-Query-Attention
-class GroupedQueryAttention:
-    pass
+#class GroupedQueryAttention:
+    #pass
 
 
 # add also MLA for Deepseek model
+
+# causal attention
