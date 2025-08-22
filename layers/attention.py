@@ -31,7 +31,8 @@ class MultiHeadAttention(nn.Module):
         self.heads = nn.ModuleList(
             [SelfAttention(d_model) for _ in range(num_heads)]
         )
-        self.out_proj = (num_heads, num_heads)
+        self.out_proj = nn.Linear(num_heads, num_heads)
+        #self.dropout = nn.Dropout(dropout)
     
     def forward(self, x):
         context_vec = torch.cat([head(x) for head in self.heads], dim=-1)

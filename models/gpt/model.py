@@ -9,11 +9,11 @@ from layers.embeddings import TokenEmbedding, PositionalEncoding
 
 
 class GPT(nn.Module):
-    def __init__(self, vocab_size, d_model, d_ff, num_heads, num_layers, max_len=512):
+    def __init__(self, vocab_size, d_model, num_heads, d_ff, num_layers, max_len=512, **kwargs):
         super().__init__()
         self.token_embedding = TokenEmbedding(vocab_size, d_model)
         self.pos_embedding = PositionalEncoding(d_model, max_len)
-        self.layers = nn.ModuleList([TransformerBlock(d_model, num_heads, d_ff)] for _ in range(num_layers))
+        self.layers = nn.ModuleList([TransformerBlock(d_model, d_ff) for _ in range(num_layers)])
         self.to_logits = nn.Linear(d_model, vocab_size)
 
     def forward(self, x):
