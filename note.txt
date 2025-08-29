@@ -1,0 +1,31 @@
+https://x.com/ycombinator/status/1961429173358272714
+# paper presentation reference.
+
+NB: Organize all sota papers from the lecture. Read them summarize them
+and add its implementation to the repo. no need for big params.
+Just Organize a list of them and their link
+1- GPT-OSS
+papers:
+Techniques:
+
+2- Qween3
+papers:
+Techniques:
+
+3- Deepseek V-3.1
+papers:
+Techniques:
+
+4- Gemma3:
+papers:
+Techniques:
+
+5- LLama Heard models:
+papers:
+Techniques:
+
+6- Kimi2:
+papers:
+Techniques:
+
+Also check BigLLM Comparaison by rasbt.
